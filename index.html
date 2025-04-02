@@ -37,22 +37,43 @@
               </div>
               <div class="row">
                 <div class="cell">3</div>
-                <div class="cell">Specific level 3 spells</div>
+                <div class="cell">
+                    <a href="#" class="spell-link" data-spell="misty-step">Misty Step</a>
+                    <a href="#" class="spell-link" data-spell="mirror-image">Mirror Image</a>
+                </div>
               </div>
               <div class="row">
                 <div class="cell">5</div>
-                <div class="cell">Level 5 spells</div>
+                <div class="cell">
+                    <a href="#" class="spell-link" data-spell="fireball">Fireball</a>
+                    <a href="#" class="spell-link" data-spell="counterspell">Counterspell</a>
+                </div>
               </div>
               <div class="row">
                 <div class="cell">7</div>
-                <div class="cell">Level 7 spells</div>
+                <div class="cell">
+                    <a href="#" class="spell-link" data-spell="dimension-door">Dimension Door</a>
+                </div>
               </div>
               <div class="row">
                 <div class="cell">9</div>
-                <div class="cell">Assorted lvl 9 spells</div>
+                <div class="cell">
+                    <a href="#" class="spell-link" data-spell="hold-monster">Hold Monster</a>
+                    <a href="#" class="spell-link" data-spell="teleportation-circle">Teleportation Circle</a>
+                </div>
               </div>
             </div>
           </div>
+          <!-- Spell Overlay -->
+           <div id="spell-tooltip" class="tooltip hidden">
+            <h3 id="spell-name"></h3>
+            <p><strong>Level:</strong> <span id="spell-level"></span></p>
+            <p><strong>School:</strong> <span id="spell-school"></span></p>
+            <p><strong>Duration:</strong> <span id="spell-duration"></span></p>
+            <p><strong>Casting Time:</strong> <span id="spell-casting-time"></span></p>
+            <p><strong>Description:</strong> <span id="spell-description"></span></p>
+           </div>
+
         </div>
       </section>
       <section id="level3">

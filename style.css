@@ -4,14 +4,17 @@
 }
 
 #tree-img {
-    width: 50%;
+    max-width: 300px;
 }
 
 /* Table */
+.table-container{
+    width: 60%;
+}
 .table {
     display: table;
     border-collapse: collapse;
-    width: 50%;
+    width: 100%;
     background: white;
     box-shadow: 0 0 10px rgb(0, 0, 0);
 }
@@ -28,4 +31,31 @@
     background-color: #007bff;
     color: white;
     font-weight: bold;
+}
+.spell-link {
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.spell-link:hover {
+    text-decoration: underline;
+}
+
+/* Tooltip and overlay */
+.tooltip {
+    position: absolute;
+    background: white;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    width: 450px;
+    display: none;
+    z-index: 100;
+}
+.tooltip h3 {
+    margin: 0;
+    color: #007bff;
+}
+.hidden {
+    visibility: hidden;
 }
