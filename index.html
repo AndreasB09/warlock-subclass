@@ -13,8 +13,18 @@
       <section id="intro">
         <div>
           <h2>Origins of the pact</h2>
+          <p style="font-style: italic;">A curse from one cursed</p>
           <p>
-            Short description eluding to the history of how the pact came to be.
+            About a mile outside of Heron's Crossing, within the forest, lies a glade. Sometimes serene, sometimes unsettling. It is said the feeling it gives depends entirely on who enters. The glade itself is quiet and strangely beautiful. The undergrowth never seems overgrown. Fallen branches are few, and the grass grows in gentle waves, soft beneath the feet. There is a sense that, until recently, someone tended to it.
+          </p>
+          <p>
+            At its heart stands a great hazel tree. Ancient in appearance, it looks as old as time itself, but if the locals are to be believed, it hasn't been there all that long. Its bark is covered with deep, spiraling grooves. Moss clings to its roots, which twist into the ground like searching fingers. Near its base, four letters are carved, worn by the weather but still clear: <strong>A</strong> and <strong>F</strong>, <strong>K</strong> and <strong>S</strong>. No one knows who carved them, or when.. but the tree remembers. And if you press your hand to those letters, the bark is warm, like a heartbeat.
+          </p>
+          <p>
+            They say a massacre once took place there. A traveling group of performers was found by the villagers of Heron's Crossing, all dead. Some claim it was plague. Others speak of madness, or cult-like delusions. The stories never agree, except in one detail: the runes, scrawled in blood throughout the camp. No signs of the bodies remain now. Only the tree.
+          </p>
+          <p>
+            The air around it is thick, like breathing in old magic. Time slows in its shade. Whispers drift through the tall grass, curling around ankles like unseen hands. Some claim the tree has spoken to them. Others say it watches. And lately, more and more, the witches from the outskirts have been seen in the glade, lingering longer each time, listening.
           </p>
         </div>
         <img id="tree-img" src="treeman.jpg" alt="Happy Treant" />
@@ -30,7 +40,6 @@
           </p>
           <div class="table-container">
             <div class="table">
-              <!-- Possibly link to dnd api -->
               <div class="row header">
                 <div class="cell">Warlock Level</div>
                 <div class="cell">Spells</div>
@@ -65,14 +74,14 @@
             </div>
           </div>
           <!-- Spell Overlay -->
-           <div id="spell-tooltip" class="tooltip hidden">
+          <div id="spell-tooltip" class="tooltip hidden">
             <h3 id="spell-name"></h3>
             <p><strong>Level:</strong> <span id="spell-level"></span></p>
             <p><strong>School:</strong> <span id="spell-school"></span></p>
             <p><strong>Duration:</strong> <span id="spell-duration"></span></p>
             <p><strong>Casting Time:</strong> <span id="spell-casting-time"></span></p>
             <p><strong>Description:</strong> <span id="spell-description"></span></p>
-           </div>
+          </div>
 
         </div>
       </section>
@@ -88,13 +97,13 @@
       <section id="level6">
         <h3>Level 6: Twisting Roots</h3>
         <p>
-          Hazel's power extends from her tree to restrain your foes. When you cast a spell that deals damage, spectral roots burst from the ground. The taget must make a Strenght saving throw or be Restrained until the start of your next turn. You can do this a number of times equal to your Charisma modifier per long rest.
+          Hazel's power extends from her tree to restrain your foes. When you cast a spell that deals damage, spectral roots burst from the ground. The taget must make a Strenght saving throw or be <a href="#" class="rule-link" data-rule="restrained">Restrained</a> until the start of your next turn. You can do this a number of times equal to your Charisma modifier per <a href="#" class="rule-link" data-rule="long-rest">Long rest</a>.
         </p>
       </section>
       <section id="level10">
         <h3>Level 10: Withered Curse</h3>
         <p>
-          You can mark a creature with Hazel's spire. As a bonus action, curse a creature within 30 ft. They have disadvantage on Strenght and Dexterity saving throws for 1 minute. The next time the cursed creature is reduced to 0 HP, spectral roots sprout from their body, creating difficult terrain in a 10 ft. radius. Once per long rest.
+          You can mark a creature with Hazel's spire. As a bonus action, curse a creature within 30 ft. They have <a href="#" class="rule-link" data-rule="disadvantage">Disadvantage</a> on Strenght and Dexterity saving throws for 1 minute. The next time the cursed creature is reduced to 0 HP, spectral roots sprout from their body, creating difficult terrain in a 10 ft. radius. Once per long rest.
         </p>
       </section>
       <section id="level14">
@@ -107,6 +116,10 @@
           Once you use this, you can't do so again untill you finish a long rest.
         </p>
       </section>
+      <div id="rule-tooltip" class="tooltip hidden">
+        <h3 id="rule-name"></h3>
+        <p id="rule-description"></p>
+      </div>
     </div>
   </body>
 </html>
