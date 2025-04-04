@@ -59,3 +59,9 @@
 .hidden {
     visibility: hidden;
 }
+
+.ability-title {
+    font-style: italic;
+    font-weight: bold;
+    display: inline;
+}
