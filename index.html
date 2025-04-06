@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pact of Hazel</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <script src="script.js" defer></script>
     <script src="utils.js" defer></script>
   </head>
@@ -14,7 +18,7 @@
       <section id="intro">
         <div>
           <h2>Origins of the pact</h2>
-          <p style="font-style: italic;">A curse from one cursed</p>
+          <p id="flavor-text">A curse from one cursed</p>
           <p>
             About a mile outside of Heron's Crossing, within the forest, lies a glade. Sometimes serene, sometimes unsettling. It is said the feeling it gives depends entirely on who enters. The glade itself is quiet and strangely beautiful. The undergrowth never seems overgrown. Fallen branches are few, and the grass grows in gentle waves, soft beneath the feet. There is a sense that, until recently, someone tended to it.
           </p>
@@ -28,19 +32,19 @@
             The air around it is thick, like breathing in old magic. Time slows in its shade. Whispers drift through the tall grass, curling around ankles like unseen hands. Some claim the tree has spoken to them. Others say it watches. And lately, more and more, the witches from the outskirts have been seen in the glade, lingering longer each time, listening.
           </p>
         </div>
-        <img id="tree-img" src="treeman.jpg" alt="Happy Treant" />
+        <div id="img-container">
+          <img id="tree-img" src="/images/hazel_tree.jpg" alt="Forest glade with old tree" />
+        </div> 
       </section>
-      <h2>Subclass Features</h2>
+      <h2 style="font-size: 26px;">Subclass Features</h2>
       <section id="spells">
         <div id="spells-text">
           <h2>Level 3: Wilderness Spells</h2>
           <p>
-            The magic of your patron ensures you will always have certain spells
-            ready; when you reach a warlock level specified in the Wilderness
-            Spells table, you thereafter always have the listed spells prepared.
+            The magic of Hazel seeps into your mind like roots into soil. You always have certain spells ready. When you reach a warlock level listed in the <a href="#spells-table" id="table-link">Wilderness Spells</a> table, you gain the corresponding spell, and it counts as a warlock spell for you. These spells don’t count against the number of spells you know.
           </p>
           <div class="table-container">
-            <div class="table">
+            <div class="table" id="spells-table">
               <div class="row header">
                 <div class="cell">Warlock Level</div>
                 <div class="cell">Spells</div>
@@ -48,28 +52,29 @@
               <div class="row">
                 <div class="cell">3</div>
                 <div class="cell">
-                    <a href="#" class="spell-link" data-spell="misty-step">Misty Step</a>
-                    <a href="#" class="spell-link" data-spell="mirror-image">Mirror Image</a>
+                  <a href="#" class="spell-link" data-spell="barkskin">Barkskin</a>,
+                  <a href="#" class="spell-link" data-spell="misty-step">Misty Step</a>
                 </div>
               </div>
               <div class="row">
                 <div class="cell">5</div>
                 <div class="cell">
-                    <a href="#" class="spell-link" data-spell="fireball">Fireball</a>
-                    <a href="#" class="spell-link" data-spell="counterspell">Counterspell</a>
+                  <a href="#" class="spell-link" data-spell="speak-with-plants">Speak with Plants</a>,
+                  <a href="#" class="spell-link" data-spell="bestow-curse">Bestow Curse</a>
                 </div>
               </div>
               <div class="row">
                 <div class="cell">7</div>
                 <div class="cell">
-                    <a href="#" class="spell-link" data-spell="dimension-door">Dimension Door</a>
+                  <a href="#" class="spell-link" data-spell="blight">Blight</a>,
+                  <a href="#" class="spell-link" data-spell="hallucinatory-terrain">Hallucinatory Terrain</a>
                 </div>
               </div>
               <div class="row">
                 <div class="cell">9</div>
                 <div class="cell">
-                    <a href="#" class="spell-link" data-spell="hold-monster">Hold Monster</a>
-                    <a href="#" class="spell-link" data-spell="teleportation-circle">Teleportation Circle</a>
+                  <a href="#" class="spell-link" data-spell="commune-with-nature">Commune with Nature</a>,
+                  <a href="#" class="spell-link" data-spell="flesh-to-stone">Flesh to Stone</a>
                 </div>
               </div>
             </div>
@@ -87,34 +92,47 @@
         </div>
       </section>
       <section id="level3">
-        <h3>Level 3: Duskwithered Boon</h3>
+        <h2>Level 3: Duskwithered Boon</h3>
         <p>
           When you make a pact with Hazel's tree, she grants you a cursed boon. Choose one of the following:<br>
-          <span class="ability-title">Hag's Grasp.</span> Your melee spell attacks have an extra 10 ft. range as spectral, gnarled branches lash out.<br>
-          <span class="ability-title">Black Sap Vitality.</span> When you hit a creature with Eldritch Blast, you can regain HP equal to you Charisma modifier once per turn.<br>
-          <span class="ability-title">Crone's Wisdom.</span> You can cast <a href="#" class="spell-link" data-spell="detect-magic">Detect Magic</a> and <a href="#" class="spell-link" data-spell="detect-poison-and-disease">Detect Poison and Disease</a> at will, and you gain proficiency in Herbalism Kit.
+        </p>
+        <p>
+          <span class="ability-title">Hag's Grasp.</span> Your melee spell attacks have an extra 10 ft. range as spectral, gnarled branches lash out.
+        </p>
+        <p>
+          <span class="ability-title">Black Sap Vitality.</span> When you hit a creature with Eldritch Blast, you can regain HP equal to you Charisma modifier once per turn.
+        </p>
+        <p>
+          <span class="ability-title">Crone's Wisdom.</span> You can cast <a href="#" class="spell-link" data-spell="detect-magic">Detect Magic</a> and <a href="#" class="spell-link" data-spell="detect-poison-and-disease">Detect Poison and Disease</a> at will, without expending a spell slot. You also gain proficiency in the Herbalism Kit.
+        </p>
+        <p>
+          Additionally, you learn the <a href="#" class="spell-link" data-spell="entangle">Entangle</a> spell. It counts as a warlock spell for you, and it doesn't count against the number of spells knwon.
         </p>
       </section>
       <section id="level6">
-        <h3>Level 6: Twisting Roots</h3>
+        <h2>Level 6: Twisting Roots</h2>
         <p>
-          Hazel's power extends from her tree to restrain your foes. When you cast a spell that deals damage, spectral roots burst from the ground. The taget must make a Strenght saving throw or be <a href="#" class="rule-link" data-rule="restrained">Restrained</a> until the start of your next turn. You can do this a number of times equal to your Charisma modifier per <a href="#" class="rule-link" data-rule="long-rest">Long rest</a>.
+          Hazel's reach grows with you. When you deal damage to a creature with a spell, you can summon spectral roots from the earth beneath them. The target myst succeed on a Strength saving throw or become <a href="#" class="rule-link" data-rule="restrained">Restrained</a> until the start of your next turn.<br>
+          You can do this feature a number of times equal to your Charisma modifier per <a href="#" class="rule-link" data-rule="long-rest">Long rest</a>.
         </p>
       </section>
       <section id="level10">
-        <h3>Level 10: Withered Curse</h3>
+        <h2>Level 10: Withered Curse</h2>
         <p>
-          You can mark a creature with Hazel's spire. As a bonus action, curse a creature within 30 ft. They have <a href="#" class="rule-link" data-rule="disadvantage">Disadvantage</a> on Strenght and Dexterity saving throws for 1 minute. The next time the cursed creature is reduced to 0 HP, spectral roots sprout from their body, creating difficult terrain in a 10 ft. radius. Once per long rest.
+          As a bonus action, you can mark a creature within 30 feet with Hazel's spite. For one minute, the creature is cursed. A cursed creature has <a href="#" class="rule-link" data-rule="disadvantage">Disadvantage</a> on Strenght and Dexterity saving throws. The next time the cursed creature is reduced to 0 HP, spectral roots burst from their body. The ground withing 10 ft. becomes difficult terrain for one minute, as twisted vines and bark spread from the corpse. You can use this feature once per <a href="#" class="rule-link" data-rule="long-rest">Long rest</a>.
         </p>
       </section>
       <section id="level14">
-        <h3>Level 14: Hazel's Embrace</h3>
+        <h2>Level 14: Hazel's Embrace</h2>
         <p>
-          You can call upon Hazel's power, temporarily becoming a terrible hag-like entity. As a bonus action, transform for 1 minute. You gain:<br>
-          Resistance to non-magical weapon damage<br>
-          You can move through difficult terrain caused by plants without penalty<br>
-          When a creature within 10 ft. of you hits you with a melee attack, they take necrotic damage equal to your Warlock level as your cursed sap lashes out.<br>
-          Once you use this, you can't do so again untill you finish a long rest.
+          You can call upon Hazel's true form, temporarily becoming a terrible hag-like entity. As a bonus action, you transform for 1 minute. You gain:
+        </p>
+        <p>Resistance to non-magical weapon damage</p>
+        <p>You can move through difficult terrain caused by plants without penalty<br>
+          When a creature within 10 ft. of you hits you with a melee attack, they take necrotic damage equal to your Warlock level as your cursed sap lashes out.
+        </p>
+        <p>
+          Once you use this feature, you can't do so again untill you finish a <a href="#" class="rule-link" data-rule="long-rest">Long rest</a>.
         </p>
       </section>
       <div id="rule-tooltip" class="tooltip hidden">

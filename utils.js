@@ -1,5 +1,5 @@
 // rules api
-    //ngl, got some help on this one. Could fetch the data np but it included the entirety of the rules section. Got some AI assistance on how to trim and clean it up.
+//ngl, got some help on this one. Could fetch the data np but it included the entirety of the rules section. Got some AI assistance on how to trim and clean it up.
 function setupRulesLinks() {
     const ruleLinks = document.querySelectorAll(".rule-link");
     const ruleTooltip = document.getElementById("rule-tooltip");
@@ -152,29 +152,47 @@ function setupRulesLinks() {
             }
             
             if (response && response.ok) {
-                const viewportWidth = window.innerWidth;
-                const viewportHeight = window.innerHeight;
-                const tooltipWidth = ruleTooltip.offsetWidth || 450;
-                const tooltipHeight = ruleTooltip.offsetHeight || 200;
-
-                let leftPosition = e.clientX + 15;
-                let topPosition = e.clientY + 15;
-                if (leftPosition + tooltipWidth > viewportWidth) {
-                    leftPosition = e.clientX - tooltipWidth - 15;
-                }
-                if (topPosition + tooltipHeight > viewportHeight) {
-                    topPosition = e.clientY - tooltipHeight - 15;
-                }
-                leftPos = Math.max(10, leftPosition);
-                topPos = Math.max(10, topPosition);
-
-                ruleTooltip.style.left = leftPos + "px";
-                ruleTooltip.style.top = topPos + "px";
-                ruleTooltip.classList.remove("hidden");
                 ruleTooltip.style.visibility = "visible";
                 ruleTooltip.style.display = "block";
+                ruleTooltip.style.left = "-9999px";
+                ruleTooltip.style.top = "-9999px";
                 
-                console.log("Rule data for", ruleId, ":", data);
+                setTimeout(() => {
+                    const viewportWidth = window.innerWidth;
+                    const viewportHeight = window.innerHeight;
+                    const tooltipWidth = ruleTooltip.offsetWidth;
+                    const tooltipHeight = ruleTooltip.offsetHeight;
+                    
+                    let leftPosition = e.clientX + 15;
+                    let topPosition = e.clientY + 15;
+                    
+                    if (leftPosition + tooltipWidth > viewportWidth - 10) {
+                        leftPosition = e.clientX - tooltipWidth - 15;
+                    }
+                    
+                    if (topPosition + tooltipHeight > viewportHeight - 10) {
+                        topPosition = Math.max(10, viewportHeight - tooltipHeight - 10);
+                        
+                        if (topPosition < e.clientY - tooltipHeight - 10) {
+                            topPosition = e.clientY - tooltipHeight - 10;
+                        }
+                    }
+                    
+                    leftPosition = Math.max(10, leftPosition);
+                    
+                    ruleTooltip.style.left = leftPosition + "px";
+                    ruleTooltip.style.top = topPosition + "px";
+                    
+                    console.log("Rule tooltip positioned at:", {
+                        left: leftPosition,
+                        top: topPosition,
+                        width: tooltipWidth,
+                        height: tooltipHeight,
+                        viewport: { width: viewportWidth, height: viewportHeight }
+                    });
+                }, 0);
+                
+                ruleTooltip.classList.remove("hidden");
             } else {
                 console.error("Failed to fetch rule:", ruleId);
             }

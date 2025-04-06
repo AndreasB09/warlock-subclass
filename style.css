@@ -1,15 +1,52 @@
 #intro {
     display: flex;
-    gap: 10px;
+    gap: 30px;
 }
-
-#tree-img {
-    max-width: 300px;
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #f8f8f8;
+    font-family: "Roboto", sans-serif;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+#img-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+}
+#img-container img {
+    display: block;
+    max-width: 330px;
+    height: auto;
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+}
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+#flavor-text {
+    font-style: italic;
+    margin: 15px 0;
+}
+h1 {
+    font-size: 26px;
+}
+h2 {
+    font-size: 20px;
+    margin: 5px 0;
+}
+section {
+    margin: 20px 0;
 }
 
 /* Table */
 .table-container{
     width: 60%;
+    margin: 20px 0 30px 0;
 }
 .table {
     display: table;
@@ -28,22 +65,38 @@
 
 }
 .header .cell {
-    background-color: #007bff;
+    background-color: #7f67b9;
     color: white;
     font-weight: bold;
 }
 .spell-link {
-    color: #007bff;
+    color: #6a4c9c;
     text-decoration: none;
     cursor: pointer;
+    font-weight: bold;
+    font-style: italic
 }
-.spell-link:hover {
+.spell-link:hover, .rule-link:hover, #table-link:hover {
     text-decoration: underline;
+}
+
+/* Rules */
+.rule-link {
+    color: #47a578;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+#table-link {
+    color: #7f67b9;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 /* Tooltip and overlay */
 .tooltip {
-    position: absolute;
+    position: fixed;
     background: white;
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
     padding: 10px;
@@ -52,11 +105,16 @@
     display: none;
     z-index: 100;
 }
-.tooltip h3 {
+.tooltip #spell-name {
     margin: 0;
-    color: #007bff;
+    color: #6a4c9c;
+}
+.tooltip #rule-name {
+    margin: 0;
+    color: #47a578;
 }
 .hidden {
+    display: none;
     visibility: hidden;
 }
 
