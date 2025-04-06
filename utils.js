@@ -4,6 +4,10 @@ function setupRulesLinks() {
     const ruleLinks = document.querySelectorAll(".rule-link");
     const ruleTooltip = document.getElementById("rule-tooltip");
 
+    tooltip.addEventListener("mouseleave", () => {
+        tooltip.style.display = "none";
+    });
+    
     ruleLinks.forEach(link => {
         link.addEventListener("mouseenter", async (e) => {
             const ruleId = e.target.dataset.rule;

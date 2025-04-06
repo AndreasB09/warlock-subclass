@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const spellLinks = document.querySelectorAll(".spell-link");
     const tooltip = document.getElementById("spell-tooltip");
 
+    tooltip.addEventListener("mouseleave", () => {
+        tooltip.style.display = "none";
+    });
+
     spellLinks.forEach(link => {
         link.addEventListener("mouseenter", async (e) => {
             const spellId = e.target.dataset.spell;
