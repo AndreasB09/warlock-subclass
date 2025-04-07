@@ -22,11 +22,47 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("spell-casting-time").textContent = data.casting_time;
                 document.getElementById("spell-description").textContent = data.desc.join(" ");
 
-                tooltip.style.left = e.clientX + 15 + "px";
-                tooltip.style.top = e.clientY + 15 + "px";
-                tooltip.classList.remove("hidden");
                 tooltip.style.visibility = "visible";
                 tooltip.style.display = "block";
+                tooltip.style.left = "-9999px";
+                tooltip.style.top = "-9999px";
+
+                setTimeout(() => {
+                    const viewportWidth = window.innerWidth;
+                    const viewportHeight = window.innerHeight;
+                    const tooltipWidth = tooltip.offsetWidth;
+                    const tooltipHeight = tooltip.offsetHeight;
+                    
+                    let leftPosition = e.clientX + 15;
+                    let topPosition = e.clientY + 15;
+                    
+                    if (leftPosition + tooltipWidth > viewportWidth - 10) {
+                        leftPosition = e.clientX - tooltipWidth - 15;
+                    }
+                
+                    if (topPosition + tooltipHeight > viewportHeight - 10) {
+                        topPosition = Math.max(10, viewportHeight - tooltipHeight - 10);
+                        
+                        if (topPosition < e.clientY - tooltipHeight - 10) {
+                            topPosition = e.clientY - tooltipHeight - 10;
+                        }
+                    }
+                    e
+                    leftPosition = Math.max(10, leftPosition);
+                    
+                    tooltip.style.left = leftPosition + "px";
+                    tooltip.style.top = topPosition + "px";
+                    
+                    console.log("Spell tooltip positioned at:", {
+                        left: leftPosition,
+                        top: topPosition,
+                        width: tooltipWidth,
+                        height: tooltipHeight,
+                        viewport: { width: viewportWidth, height: viewportHeight }
+                    });
+                }, 0);
+                
+                tooltip.classList.remove("hidden");
             }
         });
 

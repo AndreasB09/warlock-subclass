@@ -1,5 +1,5 @@
 // rules api
-//ngl, got some help on this one. Could fetch the data np but it included the entirety of the rules section. Got some AI assistance on how to trim and clean it up.
+//ngl, got some help on this one. Had to figure out how to extract the specific rules I wanted from the text dumps the API returns. Got some AI assistance with the regex patterns to clean up the text properly.
 function setupRulesLinks() {
     const ruleLinks = document.querySelectorAll(".rule-link");
     const ruleTooltip = document.getElementById("rule-tooltip");
