@@ -52,14 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     
                     tooltip.style.left = leftPosition + "px";
                     tooltip.style.top = topPosition + "px";
-                    
-                    console.log("Spell tooltip positioned at:", {
-                        left: leftPosition,
-                        top: topPosition,
-                        width: tooltipWidth,
-                        height: tooltipHeight,
-                        viewport: { width: viewportWidth, height: viewportHeight }
-                    });
                 }, 0);
                 
                 tooltip.classList.remove("hidden");

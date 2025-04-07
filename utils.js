@@ -187,13 +187,6 @@ function setupRulesLinks() {
                     ruleTooltip.style.left = leftPosition + "px";
                     ruleTooltip.style.top = topPosition + "px";
                     
-                    console.log("Rule tooltip positioned at:", {
-                        left: leftPosition,
-                        top: topPosition,
-                        width: tooltipWidth,
-                        height: tooltipHeight,
-                        viewport: { width: viewportWidth, height: viewportHeight }
-                    });
                 }, 0);
                 
                 ruleTooltip.classList.remove("hidden");
