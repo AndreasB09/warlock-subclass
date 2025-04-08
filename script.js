@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
                             topPosition = e.clientY - tooltipHeight - 10;
                         }
                     }
-                    e
                     leftPosition = Math.max(10, leftPosition);
                     
                     tooltip.style.left = leftPosition + "px";
